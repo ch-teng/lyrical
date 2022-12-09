@@ -24,7 +24,7 @@ function GuessInput() {
         }}
         required
       />
-      <button>Send</button>
+      <button>Give up!</button>
     </form>
   );
 }

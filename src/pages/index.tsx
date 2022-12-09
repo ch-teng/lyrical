@@ -3,6 +3,7 @@ import Image from "next/image";
 import Router from "next/router";
 import React from "react";
 import styles from "../../styles/Home.module.css";
+import SearchAnimation from "../components/SearchAnimation";
 
 export default function Home() {
   const handleSubmit = (e: React.FormEvent<EventTarget | HTMLFormElement>) => {
@@ -12,14 +13,18 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>Lyrical</title>
-        <link rel="icon" href="/eighthnote.ico" />
-      </Head>
       <main className={styles.main}>
-        Lyrical
         <form onSubmit={handleSubmit}>
-          <input type="search" name="SongLookup" />
+          <div className={styles.formControl}>
+            <input
+              type="search"
+              name="SongLookup"
+              autoComplete="off"
+              required
+              id="search"
+            />
+            <SearchAnimation>Lyrical</SearchAnimation>
+          </div>
         </form>
       </main>
       <footer className={styles.footer}>

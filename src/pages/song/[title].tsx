@@ -5,6 +5,8 @@ import GuessInput from "../../components/GuessInput";
 import ShowGuesses from "../../components/ShowGuesses";
 import { setList } from "../../features/lyricListSlice";
 import styles from "../../../styles/title.module.css";
+import ResultsPopup from "../../components/ResultsPopup";
+import { useState } from "react";
 
 export const getStaticPaths = async () => {
   return {
@@ -24,12 +26,14 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 function SongPage(props: InferGetStaticPropsType<typeof getStaticProps>) {
+  const [popupShow, setPopupShow] = useState(false);
   const dispatch = useAppDispatch();
   dispatch(setList(props.arr));
   return (
     <div className={styles.container}>
       <main className={styles.main}>
         <title>Never Gonna Give You Up</title>
+        <ResultsPopup open={true}>Hello!</ResultsPopup>
         <GuessInput />
         <ShowGuesses />
       </main>
