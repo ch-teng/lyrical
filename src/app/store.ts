@@ -1,11 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import wordListSliceReducer from "../features/wordListSlice";
 import lyricListSliceReducer from "../features/lyricListSlice";
+import percentCorrectSliceReducer from "../features/percentCorrectSlice";
+import correctCountSliceReducer from "../features/correctCountSlice";
 
 const store = configureStore({
   reducer: {
     wordList: wordListSliceReducer,
     lyricList: lyricListSliceReducer,
+    percentCorrect: percentCorrectSliceReducer,
+    correctCount: correctCountSliceReducer,
   },
 });
 

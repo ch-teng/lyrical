@@ -23,7 +23,7 @@ export default function Home() {
               required
               id="search"
             />
-            <SearchAnimation>Lyrical</SearchAnimation>
+            <SearchAnimation>Search...</SearchAnimation>
           </div>
         </form>
       </main>

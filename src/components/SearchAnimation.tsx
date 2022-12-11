@@ -2,7 +2,6 @@ import styles from "../../styles/searchAnimation.module.css";
 
 interface searchAnimationProps {
   children: React.ReactNode;
-  style: React.CSSProperties;
 }
 
 function SearchAnimation({ children }: searchAnimationProps) {
@@ -13,12 +12,16 @@ function SearchAnimation({ children }: searchAnimationProps) {
     };
   };
   return (
-    <label>
+    <label htmlFor="search">
       {children!
         .toString()
         .split("")
         .map((letter: string, index: number) => {
-          return <span style={stylesObj(index)}>{letter}</span>;
+          return (
+            <span style={stylesObj(index)} key={index}>
+              {letter}
+            </span>
+          );
         })}
     </label>
   );
